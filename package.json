@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Gripexfc/nodeStudy/issues"
   },
-  "homepage": "https://github.com/Gripexfc/nodeStudy#readme"
+  "homepage": "https://github.com/Gripexfc/nodeStudy#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }

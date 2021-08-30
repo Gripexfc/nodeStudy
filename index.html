@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button id='btn'>点击</button>
+    </div>
+</body>
+</html>
+
+<script>
+    // addEventListener
+    const btn = document.getElementById('btn');
+    console.log(btn,'btn')
+    btn.addEventListener('click',function() {
+        fetch(`http://${location.host}/game`).then(res=>{
+            console.log(res,'res')
+        })
+    })
+</script>>
