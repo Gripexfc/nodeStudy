@@ -21,15 +21,15 @@ module.exports = function(user) {
         console.log(user,'请使用正确的出拳方式')
     } else {
         if(user === random) {
-            console.log('平局')
+            return '平局'
         } else if(
             user == 1 && random == 3 ||
             user == 2 && random == 1 ||
             user == 3 && random == 2
         ) {
-            console.log('你输了')
+            return '你输了'
         } else {
-            console.log(random,'你赢了')
+            return '你赢了'
         }
     }
 }

@@ -5,21 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #cavans {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <button id='btn'>点击</button>
+        <button id='Stone'>石头</button>
+        <button id='Scissors'>剪刀</button>
+        <button id='cloth'>布</button>
+        <div id='cavans'>
+
+        </div>
     </div>
 </body>
 </html>
 
 <script>
-    // addEventListener
     const btn = document.getElementById('btn');
-    console.log(btn,'btn')
-    btn.addEventListener('click',function() {
-        fetch(`http://${location.host}/game`).then(res=>{
-            console.log(res,'res')
+    const $button = {
+        Stone: document.getElementById('Stone'),
+        Scissors: document.getElementById('Scissors'),
+        cloth: document.getElementById('cloth'),
+    }
+
+    Object.keys($button).forEach((key,index) =>{
+        $button[key].addEventListener('click',function() {
+            fetch(`http://${location.host}/game?action=${index}`).then(res=>{
+                return res.text();
+            }).then(res=>{
+                document.getElementById('cavans').innerHTML  = res;
+            })
         })
     })
 </script>>
